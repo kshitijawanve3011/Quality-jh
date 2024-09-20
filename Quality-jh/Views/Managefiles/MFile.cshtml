@@ -1,0 +1,38 @@
+﻿@using (Html.BeginForm("MFile", "Managefiles", FormMethod.Post,
+   new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+
+    <fieldset>
+        <legend>Upload a file</legend>
+        <div class="editor-field">
+            @Html.TextBox("file", "", new { type = "file" })
+        </div>
+        <div class="editor-field">
+            <input type="submit" value="Upload" />
+        </div>
+    </fieldset>
+}
+
+
+
+@* @model List<string>
+
+<h2>Downloads</h2>
+<table>
+    <tr>
+        <th>File Name</th>
+        <th>Link</th>
+    </tr>
+    @for (var i = 0; i <= Model.Count - 1; i++)
+    {
+        <tr>
+            <td>
+                @Model[i].ToString()
+            </td>
+            <td>
+                @Html.ActionLink("Download", "Download", new { ImageName = @Model[i].ToString() })
+            </td>
+        </tr>
+    }
+</table> *@

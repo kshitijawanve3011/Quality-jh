@@ -1,0 +1,24 @@
+﻿@model IEnumerable<string>
+
+<h2>Retrieve</h2>
+<table>
+    <tr>
+        <th>File Name</th>
+        <th>Link</th>
+        
+        @* {action} *@
+    </tr>
+    @foreach (var file in Model)
+    {
+        <tr>
+            <td>
+                @file.ToString()
+            </td>
+            <td>
+                @Html.ActionLink("Retrieve", "Retrieve", new { ImageName = @file.ToString() })
+            </td>
+        </tr>
+    }
+</table>
+
+
